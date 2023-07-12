@@ -1,9 +1,10 @@
-import React from 'react'
+import {configureStore} from "@reduxjs/toolkit"
 
-function Store() {
-  return (
-    <div>Store</div>
-  )
-}
+import DetailsSlice from "./DetailsSlice"
 
+const Store = configureStore({
+  reducer:{
+    Details:DetailsSlice
+  }
+})
 export default Store

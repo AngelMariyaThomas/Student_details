@@ -1,27 +1,36 @@
-.container{
-    .navbar{
-        background-color: palevioletred;
-        margin-bottom: 950px;
-        width: 1800px;
-        color: white;
-    }
-    h2{
-        margin-top: 60px;
-    }
-    input{
-        margin-left: 1000px;
-        width: 550px;
-        height: 30px;
-        margin-bottom: 40px;
-        border: none;
-        border-radius: 5px;
-    }
-    .right{
-        background-color:  palevioletred;
-        width: 10px;
-  
-       
-          
-          
-    }
+body{
+    background-color: olivedrab;
 }
+  
+.container {
+    padding: 20px;
+  }
+  
+  .navbar {
+    background-color: rgb(77, 141, 184);
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  

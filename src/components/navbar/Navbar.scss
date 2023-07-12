@@ -1,0 +1,43 @@
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+ 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background-color: rgb(55, 142, 192);
+    height: 60px;
+    display: flex;
+    margin-bottom: 200px;
+
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-bar button{
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #09599b;
+    color: #fff;
+    border: none;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,50 @@
+{
+    "students":[{
+    "id": 101,
+    "name":"Carlos",
+   "dob":"12-5-2001",
+    "grades": [ 2.3, 4.3, 5.0],
+    "yearsOld":15
+   
+    },
+    {
+    "id": 202,
+    "name":"Mark",
+    "dob":"2-9-2001",
+    "grades": [ 3.3, 5.0, 3.0],
+    "yearsOld":18
+  
+    },
+    {
+    "id": 303,
+    "name":"Stephany",
+    "dob":"19-5-2002",
+    "grades": [ 3.3, 4.0, 3.8],
+    "yearsOld":17
+   
+    },
+    {
+    "id": 404,
+    "name":"Angela",
+    "dob":"8-7-2001",
+    "grades": [ 1.0, 4.8, 4.0],
+    "yearsOld":16
+
+    },    
+    {
+    "id": 505,
+    "name":"Jackson",
+    "dob":"5-5-2001",
+    "grades": [ 5.0, 5.0, 5.0],
+    "yearsOld":15
+   
+    },
+    {
+    "id": 606,
+    "name":"Melissa",
+    "dob":"30-10-2001",
+    "grades": [ 3.0, 4.0, 5.0],
+    "yearsOld":19
+   
+    }]
+    }
