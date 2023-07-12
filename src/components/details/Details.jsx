@@ -56,11 +56,13 @@ import Navbar from "../navbar/Navbar";
 
 const Details = () => {
   const students = useSelector((state) => state.Details.data);
-
+  const status = useSelector((state) => state.status);
+  const error = useSelector((state) => state.error);
   const dispatch = useDispatch();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [sortOrder, setSortOrder] = useState("asc");
 
   useEffect(() => {
     dispatch(fetchStudents());
@@ -68,13 +70,27 @@ const Details = () => {
 
   useEffect(() => {
     handleSearch();
-  }, [searchQuery]);
+    handleSort();
+  }, [searchQuery, sortOrder]);
 
   const handleSearch = () => {
     const filteredStudents = students.filter((student) =>
       student.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setSearchResults(filteredStudents);
+  };
+
+  const handleSort = () => {
+    const sortedStudents = [...students].sort((a, b) => {
+      const dateA = new Date(a.dob);
+      const dateB = new Date(b.dob);
+      if (sortOrder === "asc") {
+        return dateA - dateB;
+      } else {
+        return dateB - dateA;
+      }
+    });
+    setSearchResults(sortedStudents);
   };
 
   return (
@@ -88,6 +104,10 @@ const Details = () => {
         placeholder="Search by name"
       />
 
+      <button onClick={() => setSortOrder(sortOrder === "asc" ? "desc" : "asc")}>
+        Sort by Date of Birth ({sortOrder === "asc" ? "Ascending" : "Descending"})
+      </button>
+
       <table>
         <thead>
           <tr>
@@ -98,16 +118,14 @@ const Details = () => {
           </tr>
         </thead>
         <tbody>
-          {(searchResults.length > 0 ? searchResults : students).map(
-            (student) => (
-              <tr key={student.id}>
-                <td>{student.name}</td>
-                <td>{student.dob}</td>
-                <td>{student.grades}</td>
-                <td>{student.yearsOld}</td>
-              </tr>
-            )
-          )}
+          {(searchResults.length > 0 ? searchResults : students).map((student) => (
+            <tr key={student.id}>
+              <td>{student.name}</td>
+              <td>{student.dob}</td>
+              <td>{student.grades}</td>
+              <td>{student.yearsOld}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
@@ -115,3 +133,4 @@ const Details = () => {
 };
 
 export default Details;
+
