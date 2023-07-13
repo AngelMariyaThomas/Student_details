@@ -1,4 +1,5 @@
 import React from 'react'
+import './Login.scss'
 
 import  { useState } from 'react';
 
@@ -24,16 +25,8 @@ function Login() {
       console.log('Login Failed');
     };
   return (
-    <div
-    style={{
-      display: 'flex',
-      flex: 1,
-      height: '100vh',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: 'white',
-    }}
-  >
+    <div className='login' >
+  
     {!loggedIn ? (
       <GoogleOAuthProvider clientId="457813109578-s210epfrmn7gk3v5tr8bmk0psfo39e3j.apps.googleusercontent.com">
         <GoogleLogin
@@ -42,10 +35,11 @@ function Login() {
         />
       </GoogleOAuthProvider>
     ) : (
-      <div>
+      <div className='details'>
         <Details />
-        <button onClick={handleLogout}>Logout</button>
+        <button  onClick={handleLogout}>Logout</button>
       </div>
+      
     )}
   </div>
   )

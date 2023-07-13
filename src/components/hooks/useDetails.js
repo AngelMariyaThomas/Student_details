@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchStudents } from "../redux/DetailsSlice";
+import { deleteStudent, fetchStudents } from "../redux/DetailsSlice";
+
+
 
 
 const useDetails = () => {
   const allStudents = useSelector((state) => state.Details.data);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOrder, setSortOrder] = useState("asc"); 
+
+
 
   const dispatch = useDispatch();
 
@@ -21,6 +25,11 @@ const useDetails = () => {
   const handleSortOrder = (e) => {
     setSortOrder(e.target.value);
   };
+
+const handleDeleteStudent=(studentId)=>{
+    dispatch(deleteStudent(studentId))
+}
+
 
   const sortedStudents = [...allStudents].sort((a, b) => {
     const dateA = new Date(a.dob);
@@ -43,6 +52,8 @@ const useDetails = () => {
     sortOrder,
     handleSortOrder,
     filteredStudents,
+    handleDeleteStudent
+ 
   };
 };
 
