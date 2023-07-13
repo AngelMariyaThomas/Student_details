@@ -1,18 +1,10 @@
-body{
-    background-color: olivedrab;
-}
-  
+
 .container {
     padding: 20px;
+    background-color: white;
   }
   
-  .navbar {
-    background-color: rgb(77, 141, 184);
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  
+
   h1 {
     margin: 0;
   }
@@ -20,7 +12,7 @@ body{
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+  
   }
   
   th, td {

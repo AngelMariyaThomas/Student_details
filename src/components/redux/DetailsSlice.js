@@ -3,26 +3,18 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchStudents = createAsyncThunk(
   "students/fetchStudents",
   async () => {
-    const response = await fetch("  http://localhost:7000/students");
+    const response = await fetch("  http://localhost:7500/students");
     const data = await response.json();
     return data;
   }
 );
 
-// export const deleteStudent = createAsyncThunk(
-//   "students/deleteStudent",
-//   async (studentId) => {
-//     await fetch(`   http://localhost:7000/students/${studentId}`, {
-//       method: "DELETE",
-//     });
-//     return studentId;
-//   }
-// );
+
 
 export const addStudent = createAsyncThunk(
   "students/addStudent",
   async (studentData) => {
-    const response = await fetch("   http://localhost:7000/students", {
+    const response = await fetch("   http://localhost:7500/students", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,19 +47,7 @@ const DetailsSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       })
-      // .addCase(deleteStudent.pending, (state) => {
-      //   state.status = "loading";
-      // })
-      // .addCase(deleteStudent.fulfilled, (state, action) => {
-      //   state.status = "succeeded";
-      //   state.data = state.data.filter(
-      //     (student) => student.id !== action.payload
-      //   );
-      // })
-      // .addCase(deleteStudent.rejected, (state, action) => {
-      //   state.status = "failed";
-      //   state.error = action.error.message;
-      // })
+   
       .addCase(addStudent.pending, (state) => {
         state.status = "loading";
       })
